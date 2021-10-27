@@ -1,0 +1,23 @@
+{
+  "name": "web-dev-team-roster-generator",
+  "version": "1.0.0",
+  "description": "- [Installation](#installation)\r - [Usage](#usage)\r - [Credits](#credits)\r - [License](#license)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewjflanagan/Web-Dev-Team-Roster-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthewjflanagan/Web-Dev-Team-Roster-Generator/issues"
+  },
+  "homepage": "https://github.com/matthewjflanagan/Web-Dev-Team-Roster-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.3.1"
+  }
+}
