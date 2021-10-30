@@ -1,4 +1,5 @@
-const Engineer = require('../lib/engineer');
+const Employee = require('../lib/employee');
+const Intern = require('../lib/intern');
 
 describe('intern', () => {
     it('should return the intern school', () => {
