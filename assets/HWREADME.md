@@ -177,3 +177,50 @@ You are required to submit the following for review:
 
 ---
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+Code Execution (coding the flow of our application)
+
+Initial Messages
+	Inquirer prompt to build the manager 
+		have a variable on your index.js, array of employees
+		when done asking those questions: 
+			pass the answers to our Manager class 
+			take the object and stick it in an array
+		inside the .then
+			call another inquirer.prompt (anotherEmployeePrompt)
+
+		Engineer messaging (building the engineer)
+			SAME AS ABOVE EXCEPT USE THE ENGINEER CLASS
+
+		Intern messaging (building the Intern)
+		SAME AS ABOVE EXCEPT USE THE ENGINEER CLASS
+		[name, id, email]...commonQuestions, managerQuestion
+
+		function anotherEmployeePrompt() {
+			inquirer.prompt([
+				text: "Do you want to add another employee?"
+			])
+			.then(() => {
+				if they pick engineer, ask engineer quiestion 
+				if intern, ask intern question
+				if nothing write the file, call another function passing the array of employees (fs.writeFile, file should show up in the dist folder 'team.html' along with style.css) 
+			})
+		}
+
+		IN ESSENSE ONCE EMPLOYEE FINISHED, BUILD THE EMPLOYEE, ADD TO SEPERATE ARRAY, AND ASK IF THEY WANT TO ASK ANOTHER EMPLOYEE. ONCE NO MORE EMPLOYEES WRITE THE FILE. 
+
+Manager class
+	require the Employee class to extend it
+	PROPERTIES
+		phone
+
+Employee class
+	PROPERTIES
+		name
+		id
+		email
+	METHODS
+		getName() {
+			return this.name;
+		}
+	
