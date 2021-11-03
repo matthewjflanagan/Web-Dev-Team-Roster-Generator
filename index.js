@@ -108,7 +108,7 @@ function promptQuestion() {
 
                 break;
             default:
-                writeToFile();
+                writeToFile("team.html", employeeArray);
         }
     })
 }
@@ -116,7 +116,7 @@ function promptQuestion() {
 // Function to write HTML file
 function writeToFile(fileName, answers) {
     inquirer.prompt(questions).then(answers => {
-        fs.writeFile('team.html', generateMarkdown(answers), (err) =>
+        fs.writeFile(fileName, generateMarkdown(answers), (err) =>
         err ? console.error(err) : console.log('Success!'));
     })
     console.log(fileName);
