@@ -98,4 +98,3 @@ function generateMarkdown (member) {
     }
 
 module.exports = generateMarkdown
-// module.exports = generateTeam
