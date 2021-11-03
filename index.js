@@ -1,14 +1,9 @@
-const inquirer = require('inquirer')
 const fs = require("fs");
+const inquirer = require('inquirer');
+const generateMarkdown = require('./src/generateMarkdown');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
-
-function init() {
-    console.log('Build your team profile! We will start with the Manager.')
-    startHTML();
-    teamMembers();
-}
 
 let employeeArray = []
 const questions = [
@@ -30,6 +25,7 @@ const questions = [
 ]
 
 const commonQuestions = [...questions]
+
 const managerQuestion = [
     ...commonQuestions,
     {
@@ -39,7 +35,6 @@ const managerQuestion = [
     }
 ]
 
-const commonQuestions = [...questions]
 const EngineerQuestion = [
     ...commonQuestions,
     {
@@ -49,7 +44,6 @@ const EngineerQuestion = [
     }
 ]
 
-const commonQuestions = [...questions]
 const internQuestion = [
     ...commonQuestions,
     {
@@ -117,7 +111,34 @@ function promptQuestion() {
 
                 break;
             default:
-                generateMarkdown();
+                generateHTML();
         }
     })
 }
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, member) {
+    console.log(fileName);
+    console.log(member);
+    fs.writeFile(fileName, generateMarkdown(member), (err) =>
+    err ? console.error(err) : console.log('Success!'));
+}
+
+// TODO: Create a function to initialize app
+function init() {
+    teamMembers();
+    inquirer.prompt(employeeArray).then(answers => {
+      // console.log(answers);
+       // fs.writeFile('ans')
+       writeToFile('team.html', answers)
+    })
+}
+
+// // Function to Initialize the app
+// function init() {
+//     console.log("let's build your Team profile by starting with your team manager")
+//       generateTeam();
+//       generateHTML(); 
+//     }
+
+init();

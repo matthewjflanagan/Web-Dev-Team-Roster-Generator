@@ -1,5 +1,70 @@
-function startHTML() {
-    const html = 
+function generateTeam (member) {
+    const name = member.getName();
+    const role = member.getRole();
+    const id = member.getId();
+    const email = member.getEmail();
+    const school = member.getSchool();
+    const github = member.getGithub();
+    const officeNumber = member.getOfficeNumber();
+    let cards = []
+    member.forEach(member => {
+        switch (member.getRole()) {
+            case 'Manager':
+                cards.push(
+                    `<div class="card employee-card">
+                    <div class="card-header">
+                        <h2 class="card-title">${ name }</h2>
+                        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${ role }</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">ID: ${ id }</li>
+                            <li class="list-group-item">Email: <a href="mailto:${ email }">${ email }</a></li>
+                            <li class="list-group-item">Office number: ${ officeNumber }</li>
+                        </ul>
+                    </div>
+                </div>`
+                )
+                break;
+            case 'Engineer':
+                cards.push(
+                    `<div class="card employee-card">
+                        <div class="card-header">
+                        <h2 class="card-title">${ name }</h2>
+                        <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${ role }</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">ID: ${ id }</li>
+                            <li class="list-group-item">Email: <a href="mailto:${ email }">${ email }</a></li>
+                            <li class="list-group-item">GitHub: <a href="https://github.com/ ${ github }" target="_blank" rel="">${ github }</a></li>
+                        </ul>
+                    </div>
+                </div>`
+                )
+                break;
+            case 'Intern':
+                cards.push(
+                    `<div class="card employee-card">
+                        <div class="card-header">
+                            <h2 class="card-title">${ name }</h2>
+                            <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${ role }</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">ID: ${ id }</li>
+                                <li class="list-group-item">Email: <a href="mailto:${ email }">${ email }</a></li>
+                                <li class="list-group-item">School: ${ school }</li>
+                            </ul>
+                        </div>
+                    </div>`
+                )
+                break;
+        }
+    });
+}
+
+function generateMarkdown (member) {
     ` <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -23,119 +88,15 @@ function startHTML() {
         </div>
         <div class="container">
             <div class="row">
-                <div class="team-area col-12 d-flex justify-content-center">`
-    fs.writeFile("./dist/team.html", html, function(err) {
-        if (err) {
-            console.log(err);
-        }
-    });
-}
-
-function generateManagerHTML(member) {
-    const name = member.getName();
-    const role = member.getRole();
-    const id = member.getId();
-    const email = member.getEmail();
-    const officeNumber = member.getOfficeNumber();
-    const managerHtml = 
-    `<div class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">${ name }</h2>
-        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${ role }</h3>
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item">ID: ${ id }</li>
-            <li class="list-group-item">Email: <a href="mailto:${ email }">${ email }</a></li>
-            <li class="list-group-item">Office number: ${ officeNumber }</li>
-        </ul>
-    </div>
-</div>`
-fs.appendFile("./dist/team.html", managerHtml, function (err) {
- if (err) {
-     console.log(err);
- }
- else {
-     console.log("success")
- };
-})}
-
-function generateEngineerHTML(member) {
-    const name = member.getName();
-       const role = member.getRole();
-       const id = member.getId();
-       const email = member.getEmail();
-       const github = member.getGithub();
-       const engineerHtml =
-       `<div class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">${ name }</h2>
-        <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${ role }</h3>
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item">ID: ${ id }</li>
-            <li class="list-group-item">Email: <a href="mailto:${ email }">${ email }</a></li>
-            <li class="list-group-item">GitHub: <a href="https://github.com/ ${ github }" target="_blank" rel="">${ github }</a></li>
-        </ul>
-    </div>
-</div>`
-       fs.appendFile("./dist/team.html", engineerHtml, function (err) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            console.log("success")
-        };
-       })
-}
-
-function generateInternHTML(member){
-    const name = member.getName();
-    const role = member.getRole();
-    const id = member.getId();
-    const email = member.getEmail();
-    const school = member.getSchool();
-
-  const internHtml = 
-  `<div class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">${ name }</h2>
-        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${ role }</h3>
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item">ID: ${ id }</li>
-            <li class="list-group-item">Email: <a href="mailto:${ email }">${ email }</a></li>
-            <li class="list-group-item">School: ${ school }</li>
-        </ul>
-    </div>
-</div>`
-  fs.appendFile("./dist/team.html", internHtml, function (err) {
-    if (err) {
-        console.log(err);
+                <div class="team-area col-12 d-flex justify-content-center">
+                </div>
+            </div>
+            Join Team Members Data Here
+        </div>
+    </body>
+    </html>`
+    return
     }
-    else {
-        console.log("success")
-    };
-   })
 
-}
-
-function finishHTML(){
-    const html1 = 
-            ` </div>
-            </div>
-            </div>
-        </body>
-        </html>`;
-
-    fs.appendFile("./dist/team.html", html1, function (err) {
-        if (err) {
-            console.log(err);
-        };
-    });
-  
-}
-
-Init()
+module.exports = generateMarkdown
+// module.exports = generateTeam
