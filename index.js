@@ -114,14 +114,13 @@ function promptQuestion() {
 }
 
 // Function to write HTML file
-function writeToFile(fileName, data) {
+function writeToFile(fileName, answers) {
     inquirer.prompt(questions).then(answers => {
-        console.log(answers);
+        fs.writeFile('team.html', generateMarkdown(answers), (err) =>
+        err ? console.error(err) : console.log('Success!'));
     })
     console.log(fileName);
-    console.log(data);
-    fs.writeFile(fileName, generateMarkdown(data), (err) =>
-    err ? console.error(err) : console.log('Success!'));
+    console.log(answers);
 }
 
 // Function to initialize app
