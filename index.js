@@ -68,7 +68,6 @@ function teamMembers() {
         let newManager = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
         employeeArray.push(newManager);
         console.log(employeeArray)
-        generateManagerHTML(newManager);
 
         promptQuestion();
     })
@@ -80,7 +79,6 @@ function engineerPrompt() {
         let newEngineer = new Engineer(answer.name, answer.id, answer.email, answer.github);
         employeeArray.push(newEngineer);
         console.log(employeeArray)
-        generateEngineerHTML(newEngineer);
 
         promptQuestion();
     })
@@ -92,7 +90,6 @@ function internPrompt() {
         let newIntern = new Intern(answer.name, answer.id, answer.email, answer.school);
         employeeArray.push(newIntern);
         console.log(employeeArray)
-        generateInternHTML(newIntern);
 
         promptQuestion();
     })
@@ -111,27 +108,25 @@ function promptQuestion() {
 
                 break;
             default:
-                generateHTML();
+                writeToFile();
         }
     })
 }
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, member) {
+// Function to write HTML file
+function writeToFile(fileName, data) {
+    inquirer.prompt(questions).then(answers => {
+        console.log(answers);
+    })
     console.log(fileName);
-    console.log(member);
-    fs.writeFile(fileName, generateMarkdown(member), (err) =>
+    console.log(data);
+    fs.writeFile(fileName, generateMarkdown(data), (err) =>
     err ? console.error(err) : console.log('Success!'));
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     teamMembers();
-    inquirer.prompt(employeeArray).then(answers => {
-      // console.log(answers);
-       // fs.writeFile('ans')
-       writeToFile('team.html', answers)
-    })
 }
 
 // // Function to Initialize the app
