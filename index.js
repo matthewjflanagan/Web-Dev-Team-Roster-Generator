@@ -124,11 +124,4 @@ function init() {
     teamMembers();
 }
 
-// // Function to Initialize the app
-// function init() {
-//     console.log("let's build your Team profile by starting with your team manager")
-//       generateTeam();
-//       generateHTML(); 
-//     }
-
 init();

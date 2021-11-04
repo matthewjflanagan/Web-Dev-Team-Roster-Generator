@@ -1,18 +1,26 @@
 # <Web-Dev-Team-Roster-Generator>
 
 ## Description
-
+Render a website showing information about your Web Development Team based on the answers to the prompts that will be asked. Have a quick and easy way to show your team and their information on a clean and professional webpage! 
 
 ## Table of Contents (Optional)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Contact](#contact)
 
 ## Installation
+- Clone repository 
+- Open terminal
+- Enter 'node index' into the terminal
 
 ## Usage
+![Screenshot of Webpage](assets/usage.png)
 
+## Credits
+Collaborated with Olsen Ogouchi 
+Tutor & Ask BSC Assistants were both critical to the development of this app
 
 ## License
 MIT License
@@ -37,8 +45,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Features
-
+## Contact
+Email: mattflanagan40@gmail.com
 
 ## How to Contribute
 If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
