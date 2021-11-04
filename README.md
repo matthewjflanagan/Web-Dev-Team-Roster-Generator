@@ -20,7 +20,7 @@ Render a website showing information about your Web Development Team based on th
 
 ## Credits
 - Collaborated with Olsen Ogouchi 
-= Tutor & Ask BSC Assistants were both critical to the development of this app
+- Tutor & Ask BSC Assistants were both critical to the development of this app
 
 ## License
 MIT License
