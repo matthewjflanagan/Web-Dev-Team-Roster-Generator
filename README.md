@@ -16,6 +16,8 @@ Render a website showing information about your Web Development Team based on th
 - Enter 'node index' into the terminal
 
 ## Usage
+https://watch.screencastify.com/v/254WeLis9OVCUytukvky
+
 ![Screenshot of Webpage](assets/usage.png)
 
 ## Credits
